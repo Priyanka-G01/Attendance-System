@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Take Attendance</h2>
+<div id="takeatt">
+
+<form method="POST" action="/change/{{employee.id}}">
+    {% csrf_token %}
+        <label style="color:black;">Name</label>
+    &nbsp;&nbsp;<input name="ename" required value="{{employee.name}}"><br>
+    <label style="color:black;">Hours</label>
+         &nbsp; <input name="hours"><br>
+<label style="color:black;">OT</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="ot1"><br>
+
+                <button class="btn btn-success" type="submit" style="margin-left: 150px;">Submit</button>
+
+
+</form>
+</div>
+{% endblock %}

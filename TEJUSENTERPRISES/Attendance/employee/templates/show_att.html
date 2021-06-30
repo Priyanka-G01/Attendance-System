@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="date"><h2>Attendance Sheet</h2><span>{% now "jS F Y " %}</span></div>
+<br>
+<table class="table table-bordered " style="border:1px solid black;" >
+
+    <tr id="fields">
+        <td>Name</td>
+        <td>Hours</td>
+        <td>OT</td>
+         <td>Take Attendance</td>
+         <td>Delete</td>
+    </tr>
+
+    {% for i in employee %}
+    <tr >
+        <td>{{i.name}}</td>
+        <td>{{i.hours}}</td>
+        <td>{{i.OT}}</td>
+        <td>
+            <a href="edit_att/{{i.id}}">Take attendance</a>
+        </td>
+        <td>
+            <a href="delete_att/{{i.id}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="welcome" id="a">&nbsp;&nbsp;&nbsp;&nbsp;<- Back to home page</a>
+<br>
+<br>
+{% endblock %}

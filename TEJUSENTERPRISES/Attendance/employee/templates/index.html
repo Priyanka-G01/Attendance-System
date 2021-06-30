@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add an Employee</h2>
+<form id="add" method="POST" action="add">
+    {% csrf_token %}
+    <label>Name:</label>
+    {{form.ename}}<br>
+    <label>ID:</label>
+    {{form.eid}}<br>
+    <label>Aadhaar:&nbsp;</label>
+    {{form.eaadhar}}<br>
+    <label>Age:</label>
+    {{form.eage}}<br>
+    <label>Contact:</label>
+    {{form.econtact}}<br>
+
+    <div>
+        <button id="addbtn" type="submit" class="btn btn-success">Add</button>
+    </div>
+</form>
+{% endblock %}

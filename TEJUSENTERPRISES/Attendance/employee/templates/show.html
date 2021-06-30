@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="/search" id="search">
+        {% csrf_token %}
+                <input name="name">
+                <button class="btn btn-success">Search</button>
+    </form>
+<table class="table table-bordered" >
+
+    <tr id="fields">
+        <td>ID</td>
+        <td>Name</td>
+        <td>Aadhaar</td>
+        <td>Age</td>
+        <td>Contact</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+
+    {% for i in employee %}
+    <tr >
+        <td >{{i.eid}}</td>
+        <td>{{i.ename}}</td>
+        <td>{{i.eaadhar}}</td>
+        <td>{{i.eage}}</td>
+        <td>{{i.econtact}}</td>
+        <td>
+            <a href="edit/{{i.id}}">Edit</a>
+        </td>
+        <td>
+            <a href="delete/{{i.id}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="welcome" id="a">&nbsp;&nbsp;&nbsp;&nbsp;<- Back to home page</a>
+<br>
+<br>
+{% endblock %}

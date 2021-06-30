@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 style="color:black;">Welcome</h2>
+  <div class="jumbotron">
+		<img src="{% static 'images/home.jpg' %}" style="width:100%;height:135vh;">
+  </div>
+
+<div id="home-tiles" class="row">
+	<div class="col-lg-4">
+		<a href="show_att">
+			<div id="Attendance-tile">
+				<img src="{% static 'images/att.jpg' %}" >
+				<span>
+				Attendance
+			</span>
+			</div>
+		</a>
+	</div>
+	<div class="col-lg-4">
+		<a href="load_form">
+			<div id="Add-employee-tile">
+				<img src="{% static 'images/addemp.jpg' %}" >
+				<span>
+				Add Employee
+			</span>
+			</div>
+		</a>
+	</div>
+	<div class="col-lg-4">
+		<a href="show">
+			<div id="Remove-employee-tile">
+				<img src="{% static 'images/remp.jpg' %}" >
+				<span>
+				Remove Employee
+			</span>
+			</div>
+		</a>
+	</div>
+</div>
+{% endblock %}
