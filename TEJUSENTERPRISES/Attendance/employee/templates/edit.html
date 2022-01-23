@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form method="POST" action="/update/{{employee.id}}">
+<form id="add" method="POST" action="/update/{{employee.id}}">
     {% csrf_token %}
     <table>
         <tr>
@@ -32,7 +32,7 @@
         </tr>
         <tr>
             <td>
-                <button type="submit">Update</button>
+                <button id="addbtn" class="btn btn-success" type="submit">Update</button>
             </td>
         </tr>
     </table>
